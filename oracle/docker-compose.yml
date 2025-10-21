@@ -1,0 +1,19 @@
+services:
+  db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-db
+    restart: unless-stopped
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: mypassword
+      APP_USER: myuser
+      APP_USER_PASSWORD: mypassword
+      ORACLE_CHARACTERSET: AL32UTF8
+      # ORACLE_DATABASE: XEPDB1  # default PDB; uncomment to customize
+    volumes:
+      - oradata:/opt/oracle/oradata
+      - ./init.sql:/container-entrypoint-initdb.d/01-init.sql:ro
+
+volumes:
+  oradata:
