@@ -2,7 +2,7 @@
 
 <h1>
   dbeesly
-  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ada9d7d1-2d86-4556-99ae-94336fa1430f" />
+  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/d64acccb-5db1-4bae-a7e6-132cdc4fa0a8" />
 </h1>
 
 
@@ -11,7 +11,7 @@
 
 > **Michael Scott:** "I love the people of Dunder Mifflin. And I love their
 > data. Having all this information about employees, departments, timesheets...
-> it's like having a window into their souls. But stored in a database.
+> it's like having a legally bound window into their souls.
 
 ---
 
