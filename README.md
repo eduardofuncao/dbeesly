@@ -2,8 +2,8 @@
 
 <h1>
   dbeesly
-  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/d64acccb-5db1-4bae-a7e6-132cdc4fa0a8" />
 </h1>
+<img width="568" height="666" alt="image" src="https://github.com/user-attachments/assets/5ad1aba1-b4a8-41e7-8601-903554fbe626" />
 
 
 ### *"Dunder Mifflin, this is Pam."*
