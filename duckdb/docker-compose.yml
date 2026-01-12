@@ -1,0 +1,16 @@
+services:
+  duckdb-init:
+    build: .
+    restart: "no"
+    working_dir: /data
+    volumes:
+      - ./data:/data
+      - ./init.sql:/init.sql:ro
+    command: >
+      bash -c "
+        mkdir -p /data && \
+        duckdb /data/dundermifflin.duckdb <<EOF
+        .read /init.sql
+        EOF
+        echo 'Database initialized: /data/dundermifflin.duckdb'
+      "

@@ -1,21 +1,23 @@
 services:
-  db:
+  mariadb:
     image: mariadb:11.4
-    container_name: mariadb-db
     restart: unless-stopped
     ports:
       - "3306:3306"
     environment:
-      MARIADB_ROOT_PASSWORD: rootpassword
-      MARIADB_DATABASE: mydb
-      MARIADB_USER: myuser
-      MARIADB_PASSWORD: mypassword
-    command:
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
+      MYSQL_ROOT_PASSWORD: MyStrongPass123
+      MYSQL_DATABASE: dundermifflin
+      MYSQL_USER: dwight
+      MYSQL_PASSWORD: BeetsBearbeiten2025!
     volumes:
-      - mariadata:/var/lib/mysql
+      - mariadbdata:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect=1", "--mariadbupgrade"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
 
 volumes:
-  mariadata:
+  mariadbdata:
