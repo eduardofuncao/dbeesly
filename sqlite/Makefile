@@ -6,8 +6,6 @@ start:
 	@echo "pam init sqlite sqlite3 $(DB_PATH)"
 
 stop:
-
-stop:
 	@echo "SQLite has no server to stop."
 
 logs:
