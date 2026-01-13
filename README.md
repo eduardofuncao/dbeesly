@@ -18,9 +18,9 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Docker badge](https://img.shields.io/badge/Docker-supported-2496ED?logo=docker&logoColor=white)
 
-**Multi-database runnable containers with sample data setup for development and testing**
+**Multi-database runnable containers with sample data setup for development and testing - [Pam's](https://github.com/eduardofuncao/pam) sister project**
 
-[Quick Start](#-quick-start) • [Supported Databases](#-supported-databases) • [Schema](#-schema) • [Commands](#-commands) • [Development](#-development)
+[Quick Start](#-quick-start) • [Supported Databases](.md#%EF%B8%8F-supported-databases) • [Schema](#-schema) • [Commands](#%EF%B8%8F-commands) • [Development](#-development)
 
 </div>
 
