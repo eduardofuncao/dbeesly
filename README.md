@@ -159,24 +159,6 @@ Each database directory has a Makefile with these commands:
 | `make logs` | Show container logs (follow mode) |
 | `make clean` | Remove container and delete all data |
 
-### Example Workflow
-
-```bash
-cd postgres
-
-# Start fresh
-make reset
-
-# Check logs to verify initialization
-make logs
-
-# In another terminal, connect and query
-psql postgresql://postgres:myrootpassword@localhost:5432/dundermifflin
-
-# When done, clean up
-make clean
-```
-
 ---
 
 ## 💻 Development
