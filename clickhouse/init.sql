@@ -2,8 +2,10 @@
 -- ClickHouse dialect (OLAP-optimized, converted from SQL Server T-SQL)
 -- ClickHouse is an analytical columnar database
 
+USE dundermifflin;
+
 -- Departments table (MergeTree engine for analytics)
- CREATE TABLE IF NOT EXISTS departments (
+CREATE TABLE IF NOT EXISTS dundermifflin.departments (
       id UInt32,
       name String,
       location String,
@@ -11,11 +13,10 @@
       head_count UInt32,
       metadata String
   ) ENGINE = MergeTree()
-  ORDER BY id
-  PRIMARY KEY id;
+  ORDER BY id;
 
 -- Employees table (denormalized for analytics)
-CREATE TABLE IF NOT EXISTS employees (
+CREATE TABLE IF NOT EXISTS dundermifflin.employees (
       id UInt32,
       first_name String,
       last_name String,
@@ -38,11 +39,10 @@ CREATE TABLE IF NOT EXISTS employees (
       performance_rating Decimal128(1)
   ) ENGINE = MergeTree()
   PARTITION BY toYear(hire_date)
-  ORDER BY (id, department_id)
-  PRIMARY KEY id;
+  ORDER BY (id, department_id);
 
 -- Timesheets table (optimized for time-series analytics)
- CREATE TABLE IF NOT EXISTS timesheets (
+CREATE TABLE IF NOT EXISTS dundermifflin.timesheets (
       id UInt32,
       employee_id UInt32,
       task_name String,
@@ -53,12 +53,11 @@ CREATE TABLE IF NOT EXISTS employees (
       tags Array(String)
   ) ENGINE = MergeTree()
   PARTITION BY toYYYYMM(date_worked)
-  ORDER BY (id, employee_id, date_worked)
-  PRIMARY KEY id;
+  ORDER BY (id, employee_id, date_worked);
 
 
 -- Insert departments
-INSERT INTO departments VALUES 
+INSERT INTO dundermifflin.departments VALUES 
     (1, 'Sales', 'Scranton', toDecimal128(500000.00, 2), 15, '{"notes": "High-performing team", "expansion": true}'),
     (2, 'Accounting', 'Scranton', toDecimal128(300000.00, 2), 5, '{"notes": "Strict budget controls", "expansion": false}'),
     (3, 'Human Resources', 'Scranton', toDecimal128(200000.00, 2), 3, '{"notes": "Focus on employee wellness", "expansion": false}'),
@@ -68,7 +67,7 @@ INSERT INTO departments VALUES
     (7, 'Marketing', 'New York', toDecimal128(350000.00, 2), 6, '{"notes": "Brand and outreach", "expansion": true}');
 
 -- Insert employees (with explicit IDs - no auto-increment)
-INSERT INTO employees VALUES 
+INSERT INTO dundermifflin.employees VALUES 
     (1, 'Michael', 'Scott', 'Regional Manager', 'michael.scott@dundermifflin.com', '570-555-0100', toDate('1964-03-15'), toDate('2001-02-15'), toDecimal128(75000.00, 2), '101', 4, 0, 'Active', 'Pretzel', 'Improv', 'Sebring', 'That''s what she said!', 'https://linkedin.com/in/michaelscott', ['Leadership', 'Comedy'], toDecimal128(3.5, 1)),
     (2, 'Dwight', 'Schrute', 'Assistant to the Regional Manager', 'dwight.schrute@dundermifflin.com', '570-555-0101', toDate('1970-01-20'), toDate('2001-03-01'), toDecimal128(55000.00, 2), '102', 1, 1, 'Active', 'Beet chips', 'Martial Arts', 'Trans Am', 'Fact.', 'https://linkedin.com/in/dwightschrute', ['Sales', 'Farming'], toDecimal128(4.8, 1)),
     (3, 'Jim', 'Halpert', 'Sales Representative', 'jim.halpert@dundermifflin.com', '570-555-0102', toDate('1978-10-01'), toDate('2001-06-12'), toDecimal128(48000.00, 2), '103', 1, 1, 'Active', 'Jelly beans', 'Pranks', 'Subaru', 'Bears. Beets. Battlestar Galactica.', 'https://linkedin.com/in/jimhalpert', ['Sales', 'Pranks'], toDecimal128(4.7, 1)),
@@ -89,7 +88,7 @@ INSERT INTO employees VALUES
     (18, 'Gabe', 'Lewis', 'Corporate HR', 'gabe.lewis@dundermifflin.com', '570-555-0117', toDate('1982-11-10'), toDate('2012-01-01'), toDecimal128(55000.00, 2), '302', 3, 8, 'Active', 'Soda', 'Video Games', 'SUV', 'I am not a security threat.', 'https://linkedin.com/in/gabelewis', ['HR', 'Games'], toDecimal128(3.5, 1));
 
 -- Insert timesheets
-INSERT INTO timesheets VALUES 
+INSERT INTO dundermifflin.timesheets VALUES 
     (1, 1, 'Team Meeting', toDate('2023-10-01'), toDecimal128(2.0, 2), 'Discussed sales targets', 1, ['meeting', 'sales']),
     (2, 2, 'Client Call', toDate('2023-10-02'), toDecimal128(1.5, 2), 'Follow-up with Dwight Farms', 1, ['sales', 'client']),
     (3, 3, 'Prank Planning', toDate('2023-10-03'), toDecimal128(0.5, 2), 'Ideas for office fun', 0, ['fun', 'team']),

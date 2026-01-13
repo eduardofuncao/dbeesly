@@ -5,7 +5,7 @@ start:
 	@echo "  Wait for the database to initialize (check with: make logs)"
 	@echo "  Once healthy, connect with:"
 	@echo ""
-	@echo "  pam init clickhouse-docker clickhouse \"clickhouse://dwight:BeetsBearbeiten2025!@localhost:9000/dundermifflin\""
+	@echo "  pam init clickhouse-docker clickhouse \"clickhouse://dwight:BeetsBearbeiten2025!@localhost:9000?database=dundermifflin\""
 	@echo ""
 
 stop:
