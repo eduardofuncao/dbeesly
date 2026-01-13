@@ -37,6 +37,9 @@
 ### Basic Usage
 
 ```bash
+# clone the repo
+git clone https://github.com/eduardofuncao/dbeesly
+
 # Start MariaDB (default choice)
 cd mariadb && make start
 
