@@ -1,0 +1,24 @@
+services:
+  firebird:
+    image: firebirdsql/firebird:latest
+    restart: unless-stopped
+    ports:
+      - "3050:3050"
+    environment:
+      ISC_PASSWORD: "masterkey"
+      FIREBIRD_DATABASE: "the_office"
+      TZ: "UTC"
+      FIREBIRD_USER: "sysdba"
+      FIREBIRD_PASSWORD: "masterkey"
+    volumes:
+      - firebird_data:/firebird/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "isql -user SYSDBA -password masterkey /var/lib/firebird/data/the_office -q || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  firebird_data:
