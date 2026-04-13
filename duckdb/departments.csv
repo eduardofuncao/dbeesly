@@ -1,0 +1,8 @@
+id,name,location,budget,head_count,metadata
+1,Sales,Scranton,500000.00,15,"{""notes"": ""High-performing team"", ""expansion"": true}"
+2,Accounting,Scranton,300000.00,5,"{""notes"": ""Strict budget controls"", ""expansion"": false}"
+3,Human Resources,Scranton,200000.00,3,"{""notes"": ""Focus on employee wellness"", ""expansion"": false}"
+4,Management,Scranton,400000.00,2,"{""notes"": ""Leadership and strategy"", ""expansion"": true}"
+5,Warehouse,Scranton,150000.00,10,"{""notes"": ""Logistics and operations"", ""expansion"": false}"
+6,IT Support,Scranton,250000.00,4,"{""notes"": ""Tech maintenance"", ""expansion"": true}"
+7,Marketing,New York,350000.00,6,"{""notes"": ""Brand and outreach"", ""expansion"": true}"

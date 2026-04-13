@@ -3,7 +3,7 @@ DB_PATH := $(CURDIR)/mydb.db
 start:
 	sqlite3 mydb.db < init.sql
 	@echo "SQLite DB initialized. Connection: $(DB_PATH)"
-	@echo "pam init sqlite sqlite3 $(DB_PATH)"
+	@echo "squix init sqlite sqlite3 $(DB_PATH)"
 
 stop:
 	@echo "SQLite has no server to stop."

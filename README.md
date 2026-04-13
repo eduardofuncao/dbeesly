@@ -18,7 +18,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Docker badge](https://img.shields.io/badge/Docker-supported-2496ED?logo=docker&logoColor=white)
 
-**Multi-database runnable containers with sample data setup for development and testing - [Pam's](https://github.com/eduardofuncao/pam) sister project**
+**Multi-database runnable containers with sample data setup for development and testing - [Squix's](https://github.com/eduardofuncao/squix) sister project**
 
 [Quick Start](#-quick-start) • [Supported Databases](.md#%EF%B8%8F-supported-databases) • [Schema](#-schema) • [Commands](#%EF%B8%8F-commands) • [Development](#-development)
 
@@ -56,9 +56,9 @@ make clean
 ### Connect with your favorite database tool
 
 ```bash
-# Using pam
-pam init dbeesly-mysql mysql 'root:myrootpassword@tcp(127.0.0.1:3306)/dundermifflin'
-pam run "SELECT * FROM employees"
+# Using squix
+squix init dbeesly-mysql mysql 'root:myrootpassword@tcp(127.0.0.1:3306)/dundermifflin'
+squix run "SELECT * FROM employees"
 
 # Using mysql client
 mysql -h 127.0.0.1 -P 3306 -u root -pmyrootpassword dundermifflin

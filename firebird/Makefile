@@ -1,7 +1,7 @@
 start:
 	docker compose up -d
 	@echo "Firebird started. Connection information:"
-	@echo "pam init firebird-docker firebird SYSDBA:masterkey@localhost:3050//var/lib/firebird/data/the_office"
+	@echo "squix init firebird-docker firebird SYSDBA:masterkey@localhost:3050//var/lib/firebird/data/the_office"
 
 stop:
 	docker compose down

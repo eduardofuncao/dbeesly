@@ -1,0 +1,5 @@
+id,employee_id,task_name,date_worked,hours_worked,description,billable,tags
+1,1,Team Meeting,2023-10-01,2.00,Discussed sales targets,true,"[meeting, sales]"
+2,2,Client Call,2023-10-02,1.50,Follow-up with Dwight Farms,true,"[sales, client]"
+3,3,Prank Planning,2023-10-03,0.50,Ideas for office fun,false,"[fun, team]"
+4,5,Budget Review,2023-10-04,3.00,Analyzed quarterly expenses,true,"[accounting, budget]"

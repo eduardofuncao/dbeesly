@@ -1,0 +1,7 @@
+{"id":1,"name":"Sales","location":"Scranton","budget":500000.0,"head_count":15,"metadata":"{\"notes\": \"High-performing team\", \"expansion\": true}"}
+{"id":2,"name":"Accounting","location":"Scranton","budget":300000.0,"head_count":5,"metadata":"{\"notes\": \"Strict budget controls\", \"expansion\": false}"}
+{"id":3,"name":"Human Resources","location":"Scranton","budget":200000.0,"head_count":3,"metadata":"{\"notes\": \"Focus on employee wellness\", \"expansion\": false}"}
+{"id":4,"name":"Management","location":"Scranton","budget":400000.0,"head_count":2,"metadata":"{\"notes\": \"Leadership and strategy\", \"expansion\": true}"}
+{"id":5,"name":"Warehouse","location":"Scranton","budget":150000.0,"head_count":10,"metadata":"{\"notes\": \"Logistics and operations\", \"expansion\": false}"}
+{"id":6,"name":"IT Support","location":"Scranton","budget":250000.0,"head_count":4,"metadata":"{\"notes\": \"Tech maintenance\", \"expansion\": true}"}
+{"id":7,"name":"Marketing","location":"New York","budget":350000.0,"head_count":6,"metadata":"{\"notes\": \"Brand and outreach\", \"expansion\": true}"}

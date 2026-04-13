@@ -1,29 +1,18 @@
-# Smart init: Try local CLI first (works on NixOS), fall back to Docker
-init:
-	@if command -v duckdb >/dev/null 2>&1; then \
-		./init-local.sh; \
-	else \
-		echo "⚠️  DuckDB CLI not found locally. Trying Docker..."; \
-		docker compose up --remove-orphans; \
-		echo ""; \
-		echo "✓ DuckDB database initialized!"; \
-		echo "  Location: ./data/dundermifflin.duckdb"; \
-		echo ""; \
-		echo "  Connect with pam:"; \
-		echo "  pam init duckdb-local duckdb /home/user/code/dbeesly/duckdb/data/dundermifflin.duckdb"; \
-		echo ""; \
-	fi
+DB_PATH := $(CURDIR)/mydb.db
 
-# Explicit: Initialize without Docker (requires local DuckDB CLI)
-init-local:
-	./init-local.sh
+start:
+	duckdb mydb.db < init.sql
+	duckdb mydb.db -c "COPY departments TO 'departments.csv' (HEADER); COPY employees TO 'employees.csv' (HEADER); COPY timesheets TO 'timesheets.csv' (HEADER); COPY departments TO 'departments.json' (FORMAT JSON); COPY employees TO 'employees.json' (FORMAT JSON); COPY timesheets TO 'timesheets.json' (FORMAT JSON);"
+	@echo "DuckDB initialized. DB: $(DB_PATH)"
+	@echo "Exports: *.csv, *.json"
+	@echo "squix init duckdb-local duckdb $(DB_PATH)"
+
+stop:
+	@echo "DuckDB has no server to stop."
+
+logs:
+	@echo "DuckDB has no logs to show."
 
 clean:
-	rm -rf ./data
-	@echo "✓ Database files removed."
-
-reset: clean init
-	@echo "✓ DuckDB database reset."
-
-reset-local: clean init-local
-	@echo "✓ DuckDB database reset (local)."
+	rm -f $(DB_PATH) *.csv *.json
+	@echo "DuckDB files removed."

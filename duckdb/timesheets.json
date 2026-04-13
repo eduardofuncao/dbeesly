@@ -1,0 +1,4 @@
+{"id":1,"employee_id":1,"task_name":"Team Meeting","date_worked":"2023-10-01","hours_worked":2.0,"description":"Discussed sales targets","billable":true,"tags":["meeting","sales"]}
+{"id":2,"employee_id":2,"task_name":"Client Call","date_worked":"2023-10-02","hours_worked":1.5,"description":"Follow-up with Dwight Farms","billable":true,"tags":["sales","client"]}
+{"id":3,"employee_id":3,"task_name":"Prank Planning","date_worked":"2023-10-03","hours_worked":0.5,"description":"Ideas for office fun","billable":false,"tags":["fun","team"]}
+{"id":4,"employee_id":5,"task_name":"Budget Review","date_worked":"2023-10-04","hours_worked":3.0,"description":"Analyzed quarterly expenses","billable":true,"tags":["accounting","budget"]}
