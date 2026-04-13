@@ -10,7 +10,8 @@ services:
       POSTGRES_DB: mydb
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ./movies.sql:/docker-entrypoint-initdb.d/02-movies.sql:ro
 
 volumes:
   pgdata:
